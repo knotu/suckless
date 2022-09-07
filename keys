@@ -1,0 +1,136 @@
+### APPLICATION KEYS ###
+
+
+
+# general apps
+Mod1 n 				:Exec scite /media/sec_lc/docs/.notes
+Mod1 l				:exec $HOME/bin/kb-led-toggle.sh
+Mod1 t 				:Exec terminator
+Mod1 v 				:Exec terminator -e alsamixer
+Mod1 F2				:Exec dmenu_run -fn 'Droid Sans Mono-12'
+
+### AUDIO CONTROL ###
+
+# moc keys 
+Mod4 comma  			:Exec mocp -r
+Mod4 period 			:Exec mocp -f
+Mod4 p      			:Exec mocp -G
+Mod4 s      			:ToggleCmd {exec mocp -s} {exec mocp -p}
+
+# amixer -D pulse sset <options> for when using pulseaudio
+
+#Mod1 period 			:Exec /usr/bin/pulseaudio-ctl up
+#Mod1 comma  		:Exec /usr/bin/pulseaudio-ctl down
+
+# note: this can be 1 or 0. updates change it at times. 
+
+Mod1 period			:Exec pactl set-sink-volume 0 +10%
+Mod1 comma			:Exec pactl set-sink-volume 0 -10%
+
+
+Control period			:Exec pactl -- set-sink-volume 0 125%
+
+### MENU KEYS ###
+
+# click on the desktop to get menus
+OnDesktop Mouse1 	:HideMenus
+OnDesktop Mouse2 	:WorkspaceMenu
+OnDesktop Mouse3 	:RootMenu
+
+None Menu :RootMenu
+
+Mod4 Tab :WorkspaceMenu
+
+### WORKSPACE KEYS ###
+
+# scroll on the desktop to change workspaces
+Mod4 Left	 			:PrevWorkspace
+Mod4 Right 			:NextWorkspace
+
+
+# scroll on the toolbar to change workspaces
+OnToolbar Mouse4 		:PrevWorkspace
+OnToolbar Mouse5 		:NextWorkspace
+
+Mod4 F1 				:SendToWorkspace 1
+Mod4 F2 				:SendToWorkspace 2
+Mod4 F3 				:SendToWorkspace 3
+Mod4 F4 				:SendToWorkspace 4
+Mod4 F5				:SendToWorkspace 5
+
+Control Mod4 F1 		:TakeToWorkspace 1
+Control Mod4 F2 		:TakeToWorkspace 2
+Control Mod4 F3 		:TakeToWorkspace 3
+Control Mod4 F4 		:TakeToWorkspace 4
+Control Mod4 F5 		:TakeToWorkspace 5
+
+### WINDOW KEYS ###
+
+# mouse
+OnTitlebar Mouse1 		:MacroCmd {Focus} {Raise} {ActivateTab}
+OnTitlebar Move1 		:StartMoving
+OnLeftGrip Move1 		:StartResizing bottomleft
+OnRightGrip Move1 		:StartResizing bottomright
+OnWindowBorder Move1 	:StartMoving
+
+# alt + left/right click to move/resize a window
+OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+
+# middle click a window's titlebar and drag to attach windows
+OnTitlebar Mouse2 		:StartTabbing
+
+# double click on the titlebar to shade
+OnTitlebar Double Mouse1 :Shade
+
+# right click on the titlebar for a menu of options
+OnTitlebar Mouse3 		:WindowMenu
+
+# cycle through tabs in the current window
+Mod4 Up       			:NextWindow {groups} (workspace=[current])  ## FBCV13 ##
+Mod4 Down     		:PrevWindow {groups} (workspace=[current])  ## FBCV13 ##
+None Menu Up       		:NextWindow {groups} (workspace=[current])  ## FBCV13 ##
+None Menu Down     	:PrevWindow {groups} (workspace=[current])  ## FBCV13 ##
+#Mod4 Up      			:PrevGroup 0 (workspace=[current])
+#Mod4 Down    		:NextGroup 0 (workspace=[current])
+Mod4 Right    			:NextTab
+Mod4 Left     			:PrevTab
+
+# current window commands
+Mod1 F4 				:Close
+Mod1 F9 				:Minimize
+Mod1 F10 			:Maximize
+Mod1 F11 			:Fullscreen
+Mod4 d 				:ShowDesktop
+Mod4 Mod1 Down 		:Iconify
+Mod4 Mod1 Up 		:DeIconify
+Mod4 Mod1 d 			:ToggleDecor
+
+# move window keys
+Control Shift Left 		:Move -10 0
+Control Shift Right 		:Move 10 0
+Control Shift Up 		:Move 0 -10
+Control Shift Down 		:Move 0 10
+
+# resize window keys
+Control Shift Mod4 Left 	:Resize -10 0
+Control Shift Mod4 Right 	:Resize 10 0
+Control Shift Mod4 Up 	:Resize 0 -10
+Control Shift Mod4 Down 	:Resize 0 10
+
+### MISC KEYS ###
+
+# faux tiling 
+Mod4 w :ArrangeWindows
+#Mod4 a 				:ArrangeWindowsVertical
+Mod4 v 				:ArrangeWindowsHorizontal
+
+# Kill XServer
+Control Mod1 End 		:Exec pkill x
+
+# fluxbox control
+Mod4 Delete       		:Reconfigure
+Mod4 Shift Delete 		:Restart
+Control Mod1 Delete 	:Exit
+
+
