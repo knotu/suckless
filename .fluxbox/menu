@@ -1,0 +1,42 @@
+[begin] (FluxBox)
+	[exec] (Terminal) {terminator}
+        [exec] (File Manager) {thunar}
+        [exec] (Steam) {steam}
+	[exec] (Vivaldi) {$HOME/bin/vivaldi}
+[separator]
+    [submenu] (Editors)
+        [exec] (Nano) {terminator -e nano}
+        [exec] (scite) {scite}
+        [exec] (Vi) {terminator -e vi}
+    [end]
+    [submenu] (Multimedia)
+        [exec] (ALSA mixer) {terminator -e alsamixer}
+        [exec] (moc) {terminator -e mocp}
+        [exec] (mpv Media Player) {mpv}
+        [exec] (PulseAudio Volume Control) {pavucontrol}
+    [end]
+    [submenu] (Other)
+        [exec] (NVIDIA X Server Settings) {nvidia-settings}
+    [end]
+        [submenu] (Settings)
+            [exec] (Customize Look and Feel) {lxappearance}
+            [exec] (nitrogen) {nitrogen}
+	    [exec] (NVIDIA X Server Settings) {nvidia-settings}
+    [end]
+    [submenu] (Utilities)
+        [exec] (Synergy) {synergy}
+    [end]
+    [separator]
+    [submenu] (FluxBox)
+        [workspaces] (Workspaces)
+        [submenu] (Styles)
+            [stylesdir] (/usr/share/fluxbox/styles)
+            [stylesdir] (~/.fluxbox/styles)
+        [end]
+        [config] (Configure)
+        [reconfig] (Reconfig)
+        [restart] (Restart)
+        [separator]
+        [exit] (Exit)
+    [end]
+[end]
