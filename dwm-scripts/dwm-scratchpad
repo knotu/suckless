@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+#script used for a faux scratchpad.
+#st  -g 70x5+500+450 -n pulsemixer -e pulsemixer
+       if [ "$1" = -m ]; then
+		st  -g 120x30+300+200 -n mocp -e dtach -A /tmp/moc.dtach mocp
+	   fi 
+       
+       if [ "$1" = -p ]; then
+		st  -g 120x30+200+200 -n pulsemixer -e pulsemixer
+       fi 

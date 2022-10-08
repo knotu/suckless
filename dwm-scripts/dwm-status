@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+ 
+while true; do
+        dwm-weather > /tmp/dwm-wx.tmp
+        sleep 1800s
+done &
+
+while true; do
+        date +"%I:%M %p " > /tmp/dwm-time.tmp
+        sleep 60s
+done &
+
+while true; do
+
+WX=$(< /tmp/dwm-wx.tmp)
+CLOCK=$(< /tmp/dwm-time.tmp)
+
+#cpu
+C_USE=$(top -b -n1 | grep "Cpu(s)" | cut -c9-11|sed 's/^ *//g') 
+C_TEMP=$(sensors | grep 'Core 0' | cut -c17-18)
+G_USE=$(nvidia-smi | grep % | cut -c 61-63 |sed 's/^ *//g')
+G_TEMP=$(nvidia-smi -a -q | grep "GPU Current Temp" | cut -c45-46)
+MEM=$(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}')
+
+    xsetroot -name "| $WX| CPU: $C_USE% $C_TEMP°C | GPU: $G_USE% $G_TEMP°C | Mem: $MEM | $CLOCK "
+   sleep 5s
+done &
+
+
+

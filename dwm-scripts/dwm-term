@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+term="st"
+
+if type $term >/dev/null 2>&1
+	then
+		exec $term 
+	else
+		exec xterm
+fi
