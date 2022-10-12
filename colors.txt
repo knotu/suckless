@@ -1,0 +1,53 @@
+### Theme with orange text ###
+
+static const char col_gray1[]       = "#222222";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#eeedec";
+static const char col_gray4[]       = "#eeeeee";
+//static const char col_cyan[]       = "#005577";
+static const char col_orange[]      = "#ff3d14";
+static const char *colors[][3]      = {
+	/*               fg         bg         border   */
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
+	[SchemeSel]  = { col_orange, col_gray1,  col_gray3  },
+};
+
+
+##############################
+
+
+### ST theme ###
+
+	  /* 8 normal colors */
+  [0] = "#000000", /* black   */
+  [1] = "#ff1c1a", /* red     */
+  [2] = "#50ff37", /* green   */
+  [3] = "#fffb12", /* yellow  */
+  [4] = "#1a5fb4", /* blue    */
+  [5] = "#cb1ed1", /* magenta */
+  [6] = "#0dcdcd", /* cyan    */
+  [7] = "#e5e5e5", /* white   */
+
+  /* 8 bright colors */
+  [8]  = "#4d4d4d", /* black   */
+  [9]  = "#f42b28", /* red     */
+  [10] = "#23fd00", /* green   */
+  [11] = "#fffd00", /* yellow  */
+  [12] = "#7799ff", /* blue    */
+  [13] = "#fd28ff", /* magenta */
+  [14] = "#14ffff", /* cyan    */
+  [15] = "#ffffff", /* white   */
+
+
+	[255] = 0,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#cccccc",
+	"#555555",
+	"gray90", /* default foreground colour */
+	"#0c0c0c", /* default background colour */
+};
+
+
+
+################
