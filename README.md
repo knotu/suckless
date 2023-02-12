@@ -38,6 +38,7 @@ change Mod1Mask to Mod4Mask for MODKEY
 #add shiftview.c in proper location
  
 #include "shiftview.c"
+
 static const Key keys[] = {
 
 #add binds
