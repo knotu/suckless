@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-ZIP=$(< ~/zipcode.txt)
-
-COND="$(curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=0\&locCode\=$ZIP \
-| sed -n '/Currently:/ s/.*: \(.*\): \([-0-9]*\)\([CF]\).*/\1: \2°\3 /p')"
-
-echo -e "$COND"
-
