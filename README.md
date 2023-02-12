@@ -1,6 +1,7 @@
 My personal and quick dwm setup.
 
 Links needed:
+
 git clone https://git.suckless.org/dwm
 
 https://dwm.suckless.org/patches/pertag/
