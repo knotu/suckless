@@ -81,16 +81,13 @@ void die(const char *, ...);
 void redraw(void);
 void draw(void);
 
-
+void newterm(const Arg *);
 void kscrolldown(const Arg *);
 void kscrollup(const Arg *);
-void newterm(const Arg *);
-void opencopied(const Arg *);
 void printscreen(const Arg *);
 void printsel(const Arg *);
 void sendbreak(const Arg *);
 void toggleprinter(const Arg *);
-void copyurl(const Arg *);
 
 int tattrset(int);
 void tnew(int, int);
@@ -130,4 +127,3 @@ extern unsigned int tabspaces;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
 extern unsigned int defaultcs;
-extern float alpha;
