@@ -1,0 +1,24 @@
+From: Knotu
+Date: Mon, 10 Oct 2022 17:40:52
+Subject: [PATCH] no title color patch.
+
+---
+ dwm.c        | 4 ++--
+
+ /* tagging */
+diff --git a/dwm.c b/dwm.c
+index 5e4d494..73d335e 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -731,7 +731,7 @@ drawbar(Monitor *m)
+ 
+ 	if ((w = m->ww - tw - x) > bh) {
+ 		if (m->sel) {
+-			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
++			drw_setscheme(drw, scheme[SchemeNorm]);
+ 			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
+ 			if (m->sel->isfloating)
+ 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
+-- 
+2.32.0
+
